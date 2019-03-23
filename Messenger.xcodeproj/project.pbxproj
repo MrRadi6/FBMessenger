@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F12522A2246891400469DE3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1252292246891400469DE3 /* Message.swift */; };
+		8F12522C2246895300469DE3 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12522B2246895300469DE3 /* Friend.swift */; };
 		8F1D2D42224554AC00A262F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D2D41224554AC00A262F1 /* AppDelegate.swift */; };
 		8F1D2D44224554AC00A262F1 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D2D43224554AC00A262F1 /* FriendsController.swift */; };
 		8F1D2D4A224554AC00A262F1 /* Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D2D48224554AC00A262F1 /* Messenger.xcdatamodeld */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F1252292246891400469DE3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8F12522B2246895300469DE3 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		8F1D2D3E224554AC00A262F1 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1D2D41224554AC00A262F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F1D2D43224554AC00A262F1 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		8F1D2D562245695300A262F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F1252292246891400469DE3 /* Message.swift */,
+				8F12522B2246895300469DE3 /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 			files = (
 				8F1D2D44224554AC00A262F1 /* FriendsController.swift in Sources */,
 				8F1D2D42224554AC00A262F1 /* AppDelegate.swift in Sources */,
+				8F12522A2246891400469DE3 /* Message.swift in Sources */,
+				8F12522C2246895300469DE3 /* Friend.swift in Sources */,
 				8F1D2D4A224554AC00A262F1 /* Messenger.xcdatamodeld in Sources */,
 				8F1D2D5A224569B100A262F1 /* FriendCell.swift in Sources */,
 			);

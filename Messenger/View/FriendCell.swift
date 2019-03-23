@@ -10,6 +10,19 @@ import UIKit
 
 class FriendCell: UICollectionViewCell{
     
+    //MARK: - Message Content handling
+    var message:Message? {
+        didSet{
+            guard let newMessage = message else {return}
+            friendLabel.text = newMessage.getFriendName()
+            profilePictureView.image = UIImage(named: newMessage.getFriendImage())
+            messageLabel.text = newMessage.getText()
+            timeLabel.text = newMessage.getDate()
+            lastSeenImageView.image = UIImage(named: newMessage.getLastSeenImage())
+            
+        }
+    }
+    
     //MARK: - Profile Picture
     private let profilePictureView :UIImageView = {
         let imageView = UIImageView()
@@ -20,29 +33,29 @@ class FriendCell: UICollectionViewCell{
     }()
     
     //MARK: - Divider Line
-    let dividerLineView: UIView = {
+    private let dividerLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
         return view
     }()
     
     //MARK: - TextContainer
-    let textContainerView: UIView = {
+    private let textContainerView: UIView = {
        let container = UIView()
         container.backgroundColor = UIColor.white
         return container
     }()
     
     //MARK: - Friend label
-    let friendLabel: UILabel = {
+    private let friendLabel: UILabel = {
        let label = UILabel()
-        label.text = "Mark Zuckerberg"
+        label.text = "Friend Name"
         label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
     //MARK: - Message label
-    let messageLabel: UILabel = {
+    private let messageLabel: UILabel = {
         let label = UILabel()
         label.text = "Your frind massege and something of the ......"
         label.font = UIFont.systemFont(ofSize: 14)
@@ -51,17 +64,17 @@ class FriendCell: UICollectionViewCell{
         return label
     }()
     
-    //MARK: - Friend label
-    let timeLabel: UILabel = {
+    //MARK: - Time label
+    private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "12.00 PM"
+        label.text = "HH.MM PM"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .right
         return label
     }()
     
-    //MARK: - Friend Profile Picture
-    private let friendPictureView :UIImageView = {
+    //MARK: - LastSeen Profile Picture
+    private let lastSeenImageView :UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "markzuckerberg")
@@ -117,18 +130,18 @@ class FriendCell: UICollectionViewCell{
         textContainerView.addSubview(friendLabel)
         textContainerView.addSubview(messageLabel)
         textContainerView.addSubview(timeLabel)
-        textContainerView.addSubview(friendPictureView)
+        textContainerView.addSubview(lastSeenImageView)
 
-        friendPictureView.translatesAutoresizingMaskIntoConstraints = false
-        friendPictureView.layer.cornerRadius = 20 / 2.5
+        lastSeenImageView.translatesAutoresizingMaskIntoConstraints = false
+        lastSeenImageView.layer.cornerRadius = 20 / 2.5
         
-        friendPictureView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        friendPictureView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        friendPictureView.bottomAnchor.constraint(equalTo: textContainerView.bottomAnchor, constant: 5).isActive = true
-        friendPictureView.trailingAnchor.constraint(equalTo: textContainerView.trailingAnchor,constant: -10).isActive = true
+        lastSeenImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        lastSeenImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        lastSeenImageView.bottomAnchor.constraint(equalTo: textContainerView.bottomAnchor, constant: 5).isActive = true
+        lastSeenImageView.trailingAnchor.constraint(equalTo: textContainerView.trailingAnchor,constant: -10).isActive = true
 
         LabelSetup(view: friendLabel, top: textContainerView.topAnchor, bottom: messageLabel.topAnchor, leading: textContainerView.leadingAnchor, trailing: timeLabel.leadingAnchor)
-        LabelSetup(view: messageLabel, top: friendLabel.bottomAnchor, bottom: textContainerView.bottomAnchor, leading: textContainerView.leadingAnchor, trailing: friendPictureView.leadingAnchor)
+        LabelSetup(view: messageLabel, top: friendLabel.bottomAnchor, bottom: textContainerView.bottomAnchor, leading: textContainerView.leadingAnchor, trailing: lastSeenImageView.leadingAnchor)
         LabelSetup(view: timeLabel, top: textContainerView.topAnchor, bottom: messageLabel.topAnchor, leading: friendLabel.trailingAnchor, trailing: textContainerView.trailingAnchor)
     }
     
